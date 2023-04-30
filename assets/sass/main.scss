@@ -1,0 +1,1161 @@
+@import './reset';
+@import './variable';
+
+.big{
+    width: 100%;
+    background-color: $bgcolor;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    background-color: $bgcolor;
+    z-index: 1;
+    top: 0;
+    .nav{
+        display: flex; justify-content: space-between; align-items: center;
+        height: 5rem;
+        .logo{
+            a{
+                color: black;
+                font-weight: 900;
+                font-size: 1.6rem;
+            }
+        }
+        label{
+         display: none;
+        }
+        input{
+         display: none;
+        }
+    }
+}
+
+.header_right{
+       display: flex; justify-content: space-between; align-items: center; gap: 15rem;
+    ul{
+        display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+        li{
+            a{
+                color: #021112;
+                font-size: 1.1rem;
+            }
+        }
+        & ~ a{
+            @include tugma();
+        }
+    }
+    
+}
+
+.showcase{
+    width: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; row-gap: 3rem;
+    padding-top: 15rem;
+    // height: 300vh;
+    h1{
+        font-size: 4.2rem;
+        text-align: center;
+    }
+    p{
+        color: rgba(103, 112, 113, 1);
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    form{
+        width: 100%;
+    }
+}
+
+.showrent {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    .showrent__tepa{
+        // padding: 1rem;
+        display: flex; gap: 3rem;
+        border-bottom: 1px solid rgba(224, 226, 227, 1);
+        a{
+            color: rgba(204, 207, 208, 1);
+            padding: 1rem 0;
+            &:hover{
+                color: black;
+                border-bottom: 2px solid #000;
+            }
+        }
+
+    }
+    .showrent__past{
+        padding: 1rem 0;
+        display: grid; grid-template-columns: 28% 25% 32% 15%;
+        &__card{
+            display: flex; gap: 0.7rem;
+            i{
+                color: #13A6BA;
+            }
+            .cards_top{
+                p{
+                    font-size: 1.1rem;
+                }
+                h2{
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        .showtugma{
+            @include tugma();
+            padding: 0.7rem;
+            text-align: center;
+            height: 85%;
+            vertical-align: middle;
+            font-size: 1.2rem;
+            color: #021112;
+            &:hover{
+                color: white;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.see_main{
+    padding-top: 5rem;
+    h1{
+       @include headindh1();
+       padding: 1rem 0;
+    }
+    .see_title{
+        display: flex; justify-content: space-between; gap: 1rem;
+        p{
+           @include paragrphp();
+        }
+        .see_radios{
+            display: flex; gap: 2rem;
+            .see_radio{
+                input, label{
+                    color: $acsent2;
+                    font-size: 1.5rem;
+                    &:checked{
+                        accent-color: $acsent3;
+                    }
+                    &:hover{
+                        color: $acsent3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container2{
+
+    .see_cards{
+        padding: 3rem 0;
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+        .see_card{
+            padding: 1.5rem;
+            display: flex; flex-direction: column; row-gap: 1rem;
+            background: #FFFFFF;
+            border-radius: 2rem;
+            & img{
+                border-radius: 15px 15px 0 0;
+                width: 100%;
+                height: 100%;
+            }
+            h2{
+                @include headindh2();
+            }
+            p{
+                @include paragrphp();
+            }
+            h1{
+                @include headindh1();
+            }
+            .see_before{
+                display: flex; gap: 1rem;
+                position: relative;
+                p{
+                    @include paragrphp();
+                    color: $acsent2;
+                   
+                }
+                .after::after {
+                    content: '';
+                    position: absolute;
+                    background-color: $acsent2;
+                    width: 2px;
+                    height: 20px;
+                    font-weight: bold;
+                }
+            }
+            button{
+                @include tugma();
+                font-size: 1rem;
+                color: $primarycolor;
+                border: 2px solid $primarycolor;
+                border-radius: 20px;
+                &:hover{
+                    color: white;
+                    background-color: $primarycolor;
+                }
+            }
+            &:hover{
+                box-shadow: 2px 4px 55px rgba(0, 0, 0, 0.11);
+                transform: scale(1.02);
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+}
+
+.submit{
+    display: flex; justify-content: space-between; 
+    .submit_right{
+        display: flex; gap: 1rem;
+        a{
+            & i{
+                font-size: 2rem;
+                padding: 1rem;
+            }
+            &:hover{
+                background-color: $acsent3;
+                color: #FFFFFF;
+                border-radius: 9px;
+            }
+        }
+    }
+}
+
+.some_main{
+    width: 100%;
+    position: relative;
+    & img{
+        width: 15%;
+    }
+}
+
+.some_cards{
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    top: 12rem;
+    .some_left{
+        & img{
+            width: 90%;
+        }
+    }
+    .some_right{
+        padding: 1rem;
+        display: flex; flex-direction: column; row-gap: 3rem;
+        justify-content: center;
+        h1{
+            @include headindh1();
+        }
+        .some_protections{
+            display: flex; flex-direction: column; row-gap: 2rem;
+            .some_protection{
+                display: flex; gap: 1rem;
+                & img{
+                    width: 14%;
+                    padding: 1rem;
+                    background: #FBFCED;
+                    border-radius: 10px;
+                }
+                .some_protection_title{
+                    display: flex; flex-direction: column; gap: 0.5rem;
+                    h2{
+                        @include headindh2();
+                    }
+                    p{
+                        @include paragrphp();
+                    }
+                }
+            }
+        }
+    }
+}
+
+.what_main{
+    top: 35rem;
+    position: relative;
+    background-image: url('../media/Diegobg.svg');
+    background-size: 80% 100%;
+    background-repeat: no-repeat;
+    background-position: 30rem 0;
+    width: 100vw;
+    height: 80vh;
+    .what_cards{
+        width: 100%;
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+    }
+}
+
+.what_left{
+
+    display: flex; flex-direction: column; row-gap: 2rem;
+    h1{
+        @include headindh1();
+        width:90%;
+        font-size: 3rem;
+    }
+    .hard{
+        @include paragrphp();
+       
+    }
+
+    .what_before{
+        display: flex; gap: 2rem;
+        .whath_before{
+            h3{
+                @include headindh3();
+            }
+            p{
+                @include paragrphp();
+            }
+        }
+        .after::after {
+            content: '';
+            position: absolute;
+            background-color: $acsent2;
+            width: 2px;
+            height: 35px;
+            font-weight: bold;
+        }
+    }
+}
+
+.what_right{
+    background-image: url('../media/Diegobgbg.svg');
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    height: 80vh;
+    padding: 2rem;
+}
+
+.what_card{
+    width: 60%;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    background-color: #fff;
+    box-shadow: 8px 27px 69px rgba(0, 0, 0, 0.08);
+    position: relative;
+    right: -1rem;
+    .what_card_img{
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+    }
+    .what_card_img1{
+        width: 2%;
+        position: relative;
+        // top: 0;
+        right: -100%;
+    }
+    .what_card_img2{
+        width: 35%;
+        right: -1rem;
+        top: 4.5rem;
+        position: absolute;
+    }
+    .on{
+        font-size: 0.7rem;
+        font-weight: bold;
+        display: grid; grid-template-columns: repeat(2, 1fr); 
+        .tpimg{
+            img{
+                width: 15%;
+            }
+        }
+        
+    }
+    .lorem{
+        font-size: 0.7rem;
+    }
+
+    .tbottom{
+        width: 100%;
+        display: flex; justify-content: space-between;
+    }
+}
+
+.tadd{
+    width: 70%;
+    position: absolute;
+    left: -25%;
+    bottom: -30%;
+    // box-shadow: 16px -16px 42px rgba(0, 0, 0, 0.1);
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.see_section{
+    width: 100%;
+    padding: 15rem 0;
+    position: relative;
+    top: 20rem;
+    display: flex; align-items: center;
+    .section_middle{
+        background-color: #FDF6ED;;
+        width: 100%;
+        height: 70%;
+        margin-bottom: 1rem;
+        .container{
+            height: 100%;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.see_left{
+    position: relative;
+    height: 100%;
+    display: flex; align-items: center;
+    .leftimg{
+        img{
+            max-width: 78%;
+            max-height: 100%;
+            margin-top: -8rem;
+        }
+    }
+    .quyosh{
+        position: absolute;
+        width: 20%;
+        height: 20%;
+
+        img{
+            bottom: -6rem;
+            left: -3rem;
+            position: absolute;
+            width: 40%;
+            // height: 100%;
+        }
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.see_right{
+    position: relative;
+    display: flex; flex-direction: column; gap: 1rem; justify-content: center;
+    .skopka{
+        position: absolute;
+        right: -1rem;
+        top: 0;
+        img{
+            width: 30%;
+        }
+    }
+    h4{
+        font-size: 1rem;
+        color: rgba(19, 166, 186, 1);
+    }
+    h2{
+        font-size: 3rem;
+        line-height: 100%;
+    }
+    p{
+        color: rgba(2, 17, 18, 1);
+        font-size: 1rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.ready_section{
+    width: 100%;
+    position: relative;
+    top: 5rem;
+    padding: 4rem 0;
+    img:first-child{
+        width: 4%;
+    } 
+    img:nth-last-child(1){
+        right: 0;
+        bottom: 0;
+        position: absolute;
+    }
+    .container{
+        display: grid; grid-template-columns: repeat(2, 1fr);
+        padding: 2rem 0;
+    }
+}
+
+.ready_left{
+    h1{
+        font-size: 3rem;
+        padding: 1rem 0;
+    }
+    p{
+        font-size: 1.1rem;
+        color: rgba(103, 112, 113, 1);
+    }
+}
+
+.ready_right{
+    display: flex; justify-content: center; align-items: center;
+    background-image: url('../media/Frame\ 1.svg');
+    background-size: 30% 30%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    .for_input{
+        width: 90%;
+        border: 1px solid rgba(200, 243, 249, 1);
+        display: flex; justify-content: space-between; align-items: center;
+        border-radius: 0.5rem;
+        padding: 0 0.5rem;
+        input{
+            width: 69%;
+            height: 100%;
+            padding: 1.2rem 0;
+            outline: none;
+            border: none;
+            border-radius: 0.5rem;
+        }
+        a{
+            width: 29%;
+            @include tugma();
+        }
+    }
+}
+
+.footer{
+    width: 100%;
+    padding: 4rem 0;
+}
+
+.foo__cards{
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;
+    p{
+        color: #021112;
+        width: 90%;
+        opacity: 70%;
+        padding: 0.4rem 0;
+        line-height: 150%;
+    }
+    h2{
+        font-size: 1.2rem;
+        color: #021112;
+        font-weight: 200;
+        padding-bottom: 1rem;
+    }
+    &__card1{
+        .logo{
+            a{
+                color: black;
+                font-weight: 900;
+                font-size: 1.6rem;
+            } 
+        }
+    }
+
+    &__card3{
+        .socials{
+            padding-top: 1rem;
+            display: flex; gap: 2rem;
+            a{
+                // opacity: 70%;
+                color: rgba(200, 243, 249, 1);
+                &:hover{
+                    color: $primarycolor;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+@media (max-width: 1200px){
+
+    .header_right{
+        gap: 10rem;
+    }
+
+    .see_main{
+        padding-top: 4rem;
+        .see_title{
+            .see_radios{
+                display: flex; gap: 2rem;
+                .see_radio{
+                    input, label{
+                        @media (max-width:1200px){
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+   .container2{
+        .see_cards{
+            .see_card{
+                button{
+                    @media (max-width:1200px){
+                        font-size: 1.1rem;
+                    }
+                    @media (max-width:1000px){
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+   }
+
+   .what_card{
+        width: 70%;
+    }
+
+    .tadd{
+        width: 80%;
+        left: -20%;
+        bottom: -20%;
+    }
+}
+
+@media (max-width: 1100px){
+
+    .showcase{
+        row-gap: 2.5rem;
+        padding: 14rem 0;
+        h1{
+            font-size: 3.4rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+    
+    .showrent {
+        width: 90%;
+        padding: 1.8rem;
+        .showrent__tepa{
+            display: flex; gap: 2.8rem;
+        }
+        .showrent__past{
+            padding: 1rem 0;
+            display: grid; grid-template-columns: 28% 25% 32% 15%;
+            &__card{
+                gap: 0.7rem;
+                .cards_top{
+                    p{
+                        font-size: 1rem;
+                    }
+                    h2{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .showtugma{
+                padding: 0.6rem;
+                height: 85%;
+                font-size: 1.2rem;
+                &:hover{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .ready_left{
+        h1{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+
+}
+
+@media (max-width: 1000px){
+    
+    .header_right{
+        gap: 6rem;
+    }
+
+    .see_main{
+        padding-top: 4rem;
+        .see_title{
+            .see_radios{
+                display: flex; gap: 2rem;
+                .see_radio{
+                    input, label{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .container2{
+        .see_cards{
+            .see_card{
+                button{
+                    font-size: 1rem;
+                }
+            }
+        }
+   }
+
+    .submit{ 
+        .submit_right{
+            a{
+                & i{
+                    @media (max-width:1000px){
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .what_card{
+        width: 90%;
+        right: -5rem;
+    }
+
+    .tadd{
+        width: 80%;
+        left: -20%;
+        bottom: -25%;
+    }
+
+    .see_section{
+        .section_middle{
+            .container{
+                grid-template-columns: 1fr; gap: 2rem;
+            }
+        }
+    }
+
+    .ready_right{
+        .for_input{
+            width: 100%;
+            input{
+                width: 69%;
+                height: 100%;
+                padding: 1rem 0;
+            }
+            a{
+                width: 29%;
+            }
+        }
+    }
+
+    .foo__cards{
+        grid-template-columns: repeat(2, 1fr); justify-content: center; gap: 4rem;
+    }
+}
+
+@media (max-width: 900px){
+    
+    .header_right{
+        gap: 4rem;
+        ul{
+            gap: 1rem;
+        }
+    }
+
+    .container2{
+        .see_cards{
+                padding: 2rem 0;
+                display: flex; flex-direction: column; row-gap:1rem;
+            .see_card{
+                display: flex; flex-direction: column;
+                row-gap: 1rem; align-items: center;
+                button{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    .some_cards{
+    display: grid; grid-template-columns: repeat(1, 1fr);
+    top: 5rem;
+    .some_right{
+        padding: 1rem;
+        display: flex; flex-direction: column; row-gap: 2rem;
+        text-align: center;
+        .some_protections{
+            display: flex; flex-direction: column; row-gap: 1rem;
+            align-items: center;
+            .some_protection{
+                display: flex; gap: 1rem;
+                & img{
+                    width: 17%;
+                    padding: 1rem;
+                    background: #FBFCED;
+                    border-radius: 10px;
+                }
+                .some_protection_title{
+                    display: flex; flex-direction: column; gap: 0.5rem;
+                }
+            }
+        }
+    }
+    }
+
+    .what_main{
+        top: 60rem;
+    }
+
+    .see_section{
+        top: 45rem;
+    }
+
+    .ready_section{
+        position: relative;
+        top: 30rem;
+        .container{
+            display: grid; grid-template-columns: 1fr; gap: 2rem;
+            padding: 2rem 0;
+        }
+    }
+
+    .ready_right{
+        margin-bottom: 5rem;
+        .for_input{
+            width: 100%;
+            input{
+                width: 69%;
+                height: 100%;
+                padding: 1rem 0;
+            }
+            a{
+                width: 32%;
+                padding: 0.8rem 1rem 0.8rem 1rem;
+            }
+        }
+    }
+
+    .footer{
+        position: relative;
+        top: 20rem;
+    }
+    
+    .foo__cards{
+        grid-template-columns: repeat(2, 1fr); gap: 1rem;
+    }
+
+}
+
+@media (max-width: 850px){
+
+    .showcase{
+        row-gap: 2.3rem;
+        padding: 12rem 0;
+        h1{
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 0.9rem;
+        }
+    }
+    
+    .showrent {
+        width: 100%;
+        padding: 1.5rem;
+        .showrent__tepa{
+            display: flex; gap: 2.5rem;
+        }
+        .showrent__past{
+            padding: 1rem 0;
+            display: grid; grid-template-columns: 30% 27% 32% 15%;
+            &__card{
+                gap: 0.5rem;
+                .cards_top{
+                    p{
+                        font-size: 1rem;
+                    }
+                    h2{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            .showtugma{
+                padding: 0.6rem;
+                width: 80%;
+                height: 90%;
+                font-size: 0.8rem;
+                &:hover{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 800px){
+
+    .header_right{
+        gap: 3rem;
+        ul{
+            & ~ a{
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .what_main{
+        top: 50rem;
+    }
+}
+
+@media (max-width: 700px){
+
+    header{
+        .nav{
+            label{
+                display: block;
+            }
+        }
+    }
+
+    .header_right{
+        ul{
+            width: 100%;
+            position: fixed;
+            top: 5rem;
+            left: -100%;
+            right: 0;
+            bottom: 0;
+            background-color: $bgcolor;
+            flex-direction: column; justify-content: center;
+            gap: 3rem;
+            & ~ a{
+                padding: 0.4rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    #menu:checked ~ ul{
+        left: 0;
+    }
+    
+    .showcase{
+        row-gap: 2.3rem;
+        padding: 12rem 0;
+        h1{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 0.9rem;
+        }
+    }
+
+    .showrent {
+        width: 100%;
+        padding: 1.5rem;
+        display: flex; flex-direction: column; align-items: center; gap: 2rem;
+
+        .showrent__tepa{
+            width: 100%;
+            display: flex; flex-direction: column; align-items: center; gap: 2rem;
+            border-bottom: 2px solid #E0E2E3;
+            a{
+                &:hover{
+                    border-bottom: 1px solid #021112;
+                }
+            }
+        }
+        .showrent__past{
+            padding: 1rem 0;
+            display: flex; flex-direction: column; align-items: center; gap: 2.5rem;
+            &__card{
+                gap: 0.5rem;
+                .cards_top{
+                    p{
+                        font-size: 1rem;
+                    }
+                    h2{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            .showtugma{
+                padding: 0.6rem;
+                width: 80%;
+                height: 90%;
+                font-size: 0.8rem;
+                &:hover{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    .what_main{
+        top: 50rem;
+        .what_cards{
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .what_right{
+        height: 80vh;
+        padding: 2rem;
+        position: relative;
+        top: 1rem;
+    }
+    
+    .what_card{
+        width: 90%;
+        right: 0;
+        .what_card_img2{
+            width: 35%;
+            right: -2.5rem;
+            top: 4rem;
+        }
+    }
+    
+    .tadd{
+        width: 70%;
+        left: -15%;
+        bottom: -10%;
+    }
+}
+
+@media (max-width:650px){
+
+    .see_main{
+        text-align: center;
+        padding-top: 3rem;
+        .see_title{
+            display: flex; flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            .see_radios{
+                display: flex; gap: 2rem;
+                .see_radio{
+                    input, label{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px){
+
+    .see_left{
+        .quyosh{
+            img{
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .see_right{
+        .skopka{
+            display: none;
+        }
+        h4{
+            font-size: 0.8rem;
+        }
+        h2{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 0.8rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    .foo__cards{
+        grid-template-columns: 1fr; text-align: center; gap: 1rem;
+        p{
+            width: 100%;
+        }
+    }
+
+    .socials{
+        width: 50%;
+        margin: 0 auto;
+        a{
+            width: 100%;
+            i{
+                text-align: center;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 500px){
+    
+    .container2{
+        .see_cards{
+            padding: 1rem 0;
+            display: flex; flex-direction: column; row-gap:1rem;
+        .see_card{
+            display: flex; flex-direction: column;
+            row-gap: 1rem; align-items: center;
+            button{
+                font-size: 0.8rem;
+            }
+        }
+    }
+    }
+
+    .what_main{
+        top: 45rem;
+    }
+
+    .what_left{
+        .what_before{
+            gap: 1rem;
+        }
+    }
+}
+
+@media (max-width: 400px){
+
+    .what_main{
+        top: 40rem;
+    }
+
+    .ready_left{
+        h1{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 0.8rem;
+        }
+    }
+
+    .ready_right{
+        margin-bottom: 5rem;
+        .for_input{
+            width: 100%;
+            input{
+                width: 69%;
+                height: 100%;
+                padding: 1rem 0;
+            }
+            a{
+                width: 40%;
+                font-size: 0.8rem;
+                padding: 0.8rem 1rem 0.8rem 1rem;
+            }
+        }
+    }
+}
